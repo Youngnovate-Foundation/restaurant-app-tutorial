@@ -8,14 +8,21 @@ export async function POST(req) {
 
   console.log(data);
 
-  //   const order = await Prisma.Order.create({
-  //     data: {
-  //       packageId: "",
-  //       location: "",
-  //       phone: "",
-  //       notes: "",
-  //     },
-  //   });
+  if (!data.packageId || !data.location || !data.phone) {
+    return NextResponse.json(
+      { message: "Missing required fields" },
+      { status: 400 }
+    );
+  }
+
+  // const order = await Prisma.Order.create({
+  //   data: {
+  //     packageId: data.packageId,
+  //     location: data.location,
+  //     phone: data.phone,
+  //     notes: data.notes,
+  //   },
+  // });
 
   return NextResponse.json(data);
 }
