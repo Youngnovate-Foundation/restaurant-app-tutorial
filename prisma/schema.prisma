@@ -39,5 +39,6 @@ model Order {
   package   Package  @relation(fields: [packageId], references: [id])
   location  String
   phone     String
+  isComplete  Boolean  @default(false)
   createdAt DateTime @default(now())
 }

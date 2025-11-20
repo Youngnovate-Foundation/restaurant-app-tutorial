@@ -13,6 +13,7 @@ import Image from "next/image";
 import { useMutation } from "@tanstack/react-query";
 
 const Modal = ({ open, setOpen, food }) => {
+  console.log(food);
   // const food = {
   //   name: "Fried rice and chicken",
   //   image: "/fried_rice.jpg",
@@ -24,7 +25,7 @@ const Modal = ({ open, setOpen, food }) => {
   // };
   const [order, setOrder] = useState({
     // foodId, packageId, location, phone, notes
-    // foodId: "",
+    foodId: food.id,
     packageId: "",
     location: "",
     phone: "",
